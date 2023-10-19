@@ -1,15 +1,17 @@
+"use client";
+
 import { Product } from "@/types";
 import { Currency } from "@/components/ui/currency";
-import Button from './ui/button';
-import { ShoppingCart } from 'lucide-react';
-import useCart from '@/hooks/use-cart';
+import Button from "./ui/button";
+import { ShoppingCart } from "lucide-react";
+import useCart from "@/hooks/use-cart";
 
 interface InfoProps {
     data: Product;
 }
 
 export const Info: React.FC<InfoProps> = ({ data }) => {
-    const onAddToCart = useCart(store=>store.addItem)
+    const onAddToCart = useCart((store) => store.addItem);
     return (
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -19,7 +21,7 @@ export const Info: React.FC<InfoProps> = ({ data }) => {
                 </p>
             </div>
             <hr className="my-4" />
-            <div className='flex flex-col gap-y-6'>
+            <div className="flex flex-col gap-y-6">
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibold text-black">Size:</h3>
                     <div>{data?.size.name}</div>
@@ -32,12 +34,12 @@ export const Info: React.FC<InfoProps> = ({ data }) => {
                     ></div>
                 </div>
             </div>
-			<div className='mt-10 flex items-center gap-x-3'>
-				<Button className='flex items-center gap-x-2' onClick={()=>onAddToCart(data)}>
-					Add to Card
-					<ShoppingCart />
-				</Button>
-			</div>
+            <div className="mt-10 flex items-center gap-x-3">
+                <Button className="flex items-center gap-x-2" onClick={() => onAddToCart(data)}>
+                    Add to Card
+                    <ShoppingCart />
+                </Button>
+            </div>
         </div>
     );
 };
