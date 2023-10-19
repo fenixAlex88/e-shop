@@ -16,7 +16,7 @@ export const Billboard: React.FC<BillboardProps> = ({ data }) => {
                         className="font-bold text-3xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs"
                         style={{ WebkitTextStroke: "1px white" }}
                     >
-                        {data.label}
+                        {data?.label}
                     </div>
                 </div>
             </div>
